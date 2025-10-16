@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositório LAPC</title>
+    
+    <style>
+        /* Estilos gerais para o corpo da página */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container principal para centralizar o conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            background-color: #0056b3; /* Um azul escuro, sinta-se à vontade para mudar */
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        /* Estilo para os títulos das seções */
+        h2 {
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            color: #0056b3;
+        }
+
+        /* Estilo para cada "post" ou registro */
+        .post {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .post:hover {
+            transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+        }
+
+        /* Estilo do título do artigo (link para download) */
+        .post-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .post-title:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo para as informações do autor e ano */
+        .post-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Ícone de documento antes do título */
+        .post-title::before {
+            content: '📄'; /* Emoji de documento */
+            margin-right: 8px;
+        }
+
+        /* Rodapé simples */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #888;
+        }
+        
+        /* Media Query para Responsividade em telas menores (celulares) */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            .post-title {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+    </head>
+<body>
+
+    <header>
+        <h1>REPOSITÓRIO LAPC</h1>
+    </header>
+
+    <main class="container">
+
+        <section id="producoes-academicas">
+            <h2>Produções Acadêmicas da Liga</h2>
+            </section>
+
+        <section id="artigos-estudo">
+            <h2>Artigos e Matérias para estudos</h2>
+            </section>
+
+    </main>
+    
+    <footer>
+        <p>Repositório da Liga Acadêmica de Processos de Cuidar (LAPC)</p>
+    </footer>
+
+    <script>
+        // ==================================================================
+        // LISTA 1: Produções Acadêmicas da Liga
+        // Para adicionar um novo arquivo, apenas copie e cole um bloco {}
+        // e altere os valores. Não se esqueça da vírgula entre os blocos!
+        // ==================================================================
+        const producoesDaLiga = [
+            {
+                titulo: 'Em Desenvolvimento',
+                autor: 'Sem Autor',
+                ano: '2025',
+                arquivo: 'arquivos/artigo-exemplo-1.pdf' // Caminho para o seu arquivo PDF
+            },
+            
+            {
+                
+            },
+                
+        
+            // ADICIONE NOVOS ITENS AQUI
+            // Exemplo:
+            // {
+            //     titulo: 'Título do Novo Trabalho',
+            //     autor: 'Seu Nome',
+            //     ano: '2025',
+            //     arquivo: 'arquivos/nome-do-seu-arquivo.pdf'
+            // },
+        ];
+
+        // ==================================================================
+        // LISTA 2: Artigos e Matérias para estudos
+        // ==================================================================
+        const artigosParaEstudo = [
+            {
+                titulo: 'Em desenvolvimento',
+                autor: 'Sem autor',
+                ano: '2025',
+                arquivo: 'arquivos/artigo-exemplo-3.pdf'
+            },
+             // ADICIONE NOVOS ITENS AQUI
+        ];
+
+        /**
+         * Função que "desenha" os posts na tela.
+         * Ela recebe uma lista de publicações e o ID do local na página onde deve criar os posts.
+         */
+        function renderizarPosts(lista, elementoId) {
+            const container = document.getElementById(elementoId);
+
+            // Se não houver itens na lista, exibe uma mensagem
+            if (lista.length === 0) {
+                container.innerHTML = '<p>Nenhuma publicação nesta seção ainda.</p>';
+                return;
+            }
+
+            // Para cada item na lista, cria o código HTML correspondente
+            lista.forEach(item => {
+                // Cria um elemento <div> para o post
+                const postDiv = document.createElement('div');
+                postDiv.className = 'post';
+
+                // Cria o conteúdo HTML do post
+                postDiv.innerHTML = `
+                    <a href="${item.arquivo}" class="post-title" download>${item.titulo}</a>
+                    <p class="post-meta">por: ${item.autor}</p>
+                    <p class="post-meta">Publicado em: ${item.ano}</p>
+                `;
+                
+                // Adiciona o post criado ao container na página
+                container.appendChild(postDiv);
+            });
+        }
+        
+        // "Chama" a função para renderizar as duas listas quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarPosts(producoesDaLiga, 'producoes-academicas');
+            renderizarPosts(artigosParaEstudo, 'artigos-estudo');
+        });
+
+    </script>
+    </body>
+</html>
