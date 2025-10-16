@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositório LAPC</title>
     
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+   
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
         /* Estilos gerais para o corpo da página */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
@@ -20,36 +27,52 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         /* Estilo do cabeçalho */
-        header {
-            background-color: #0056b3; /* Um azul escuro, sinta-se à vontade para mudar */
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
-            margin-bottom: 30px;
+        header img {
+        max-width: 250px; /* Define a largura máxima da logo. Ajuste este valor como preferir! */
+        height: auto;     /* Mantém a proporção da imagem para não distorcer */
         }
 
         header h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 3.2em;
+            font-family: "Bebas Neue", sans-serif;
+        }
+        
+        /* Estilo para a seção de introdução */
+        .introduction p {
+            text-align: justify; /* Alinha o texto para justificado */
+            font-size: 1em;      /* Define o tamanho da fonte (pode ajustar se quiser) */
+            color: #444;         /* Uma cor de texto escura, mas não totalmente preta */
+            margin-bottom: 1px; /* Adiciona um espaço abaixo do texto, antes da primeira seção */
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        /* Estilo para o nome da liga destacado */
+        .league-name {
+            font-weight: bold;   /* Deixa o texto em negrito */
+            color: #0056b3;     /* Usa a mesma cor azul do cabeçalho para criar consistência */
         }
 
         /* Estilo para os títulos das seções */
         h2 {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 10px;
-            color: #0056b3;
+            border-bottom: 2px solid #313131;
+            padding-bottom: 5px;
+            color: #313131;
+            text-align: center;
+            font-size: 1.3em;
+            font-family: "Noto Sans", sans-serif;
+
         }
 
         /* Estilo para cada "post" ou registro */
         .post {
             background-color: #ffffff;
             padding: 15px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: transform 0.2s;
@@ -61,26 +84,38 @@
 
         /* Estilo do título do artigo (link para download) */
         .post-title {
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
             color: #0056b3;
             text-decoration: none;
+            font-family: "Noto Sans", sans-serif;
         }
 
         .post-title:hover {
             text-decoration: underline;
         }
+        
+        /* Estilo para a descrição do post */
+        .post-description {
+            text-align: justify; /* Alinha o texto para justificado */
+            font-size: 0.9em;    /* Tamanho de fonte um pouco menor */
+            color: #313131;         /* Cor de texto um pouco mais suave */
+            margin-top: 10px;    /* Espaço acima da descrição */
+            margin-bottom: 10px; /* Espaço abaixo da descrição */
+            font-family: "Noto Sans", sans-serif;
+        }
 
         /* Estilo para as informações do autor e ano */
         .post-meta {
             font-size: 0.9em;
-            color: #666;
+            color: #828282;
             margin-top: 5px;
+            font-family: "Noto Sans", sans-serif;
         }
 
         /* Ícone de documento antes do título */
         .post-title::before {
-            content: '📄'; /* Emoji de documento */
+            content: '📑'; /* Emoji de documento */
             margin-right: 8px;
         }
 
@@ -89,7 +124,8 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px;
-            color: #888;
+            color: #707070;
+            font-family: "Noto Sans", sans-serif;   
         }
         
         /* Media Query para Responsividade em telas menores (celulares) */
@@ -106,23 +142,38 @@
 <body>
 
     <header>
-        <h1>REPOSITÓRIO LAPC</h1>
+    <a href="index.html">
+        <img src="imagens/logocabecalho.png" alt="Logo LAPC REPOSITÓRIO">
+    </a>
     </header>
-
+    
+    <section class="introduction container">
+    <p>
+        Bem-vindo(a) ao repositório oficial da 
+        <span class="league-name">Liga Acadêmica de PsiConecta - LAPC</span>. 
+        Este espaço é dedicado ao armazenamento e compartilhamento de todas as produções acadêmicas, 
+        artigos de estudo e materiais relevantes desenvolvidos pelos nossos membros. Sinta-se à vontade 
+        para explorar, baixar e utilizar nosso acervo para seus estudos e pesquisas.
+    </p>
+    </section>
+    
     <main class="container">
 
         <section id="producoes-academicas">
-            <h2>Produções Acadêmicas da Liga</h2>
+            <h2>MATERIAIS PARA ESTUDOS</h2>
             </section>
 
         <section id="artigos-estudo">
-            <h2>Artigos e Matérias para estudos</h2>
+            <h2>PRODUÇÕES DA LAPC</h2>
             </section>
 
     </main>
     
     <footer>
-        <p>Repositório da Liga Acadêmica de Processos de Cuidar (LAPC)</p>
+        <p>
+            <strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong><br>
+            TODOS OS DIREITOS RESERVADOS - 2025
+        </p>
     </footer>
 
     <script>
@@ -134,14 +185,21 @@
         const producoesDaLiga = [
             {
                 titulo: 'Em Desenvolvimento',
+                descricao: 'Primeira descrição de exemplo para os posts de artigos para estudos',
                 autor: 'Sem Autor',
                 ano: '2025',
                 arquivo: 'arquivos/artigo-exemplo-1.pdf' // Caminho para o seu arquivo PDF
             },
             
             {
-                
+                titulo: 'Nova Aurora',
+                descricao: 'Segunda descrição de exemplo para os posts de artigos para estudos',
+                autor: 'Je',
+                ano: '2025',
+                arquivo: 'arquivos/artigo-exemplo-1.pdf'
+        
             },
+            
                 
         
             // ADICIONE NOVOS ITENS AQUI
@@ -160,6 +218,7 @@
         const artigosParaEstudo = [
             {
                 titulo: 'Em desenvolvimento',
+                descricao: 'Terceira descrição de exemplo para os posts de artigos para estudos',
                 autor: 'Sem autor',
                 ano: '2025',
                 arquivo: 'arquivos/artigo-exemplo-3.pdf'
@@ -185,13 +244,23 @@
                 // Cria um elemento <div> para o post
                 const postDiv = document.createElement('div');
                 postDiv.className = 'post';
+                
+                // --- INÍCIO DA ALTERAÇÃO ---
+                // Variável para guardar o HTML da descrição, se ela existir.
+                let descricaoHtml = '';
+                if (item.descricao) {
+                descricaoHtml = `<p class="post-description">${item.descricao}</p>`;
+                 }
 
                 // Cria o conteúdo HTML do post
                 postDiv.innerHTML = `
                     <a href="${item.arquivo}" class="post-title" download>${item.titulo}</a>
-                    <p class="post-meta">por: ${item.autor}</p>
-                    <p class="post-meta">Publicado em: ${item.ano}</p>
-                `;
+                    ${descricaoHtml}
+                    <p class="post-meta">
+                        Autor (a): ${item.autor}<br>
+                        Publicação: ${item.ano}
+                    </p>
+`;
                 
                 // Adiciona o post criado ao container na página
                 container.appendChild(postDiv);
