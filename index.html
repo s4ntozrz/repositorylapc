@@ -8,7 +8,8 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+   
     <style>
         /* ============================================= */
         /* ESTILOS GERAIS */
@@ -197,12 +198,39 @@
             color: #ffffff;
         }
         
+        /* ======================================================== */
+        /* ESTILOS ATUALIZADOS PARA O ÍCONE PRÓPRIO (IMAGEM) */
+        /* ======================================================== */
+        .social-links {
+            text-align: center;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        /* Regra para a imagem do ícone */
+        .social-links img {
+            height: 55px; /* Define a altura do seu ícone. Ajuste este valor! */
+            width: auto; /* Garante que a largura se ajuste para não distorcer */
+            transition: opacity 0.2s; /* Efeito suave na mudança de opacidade */
+        }
+        
+        /* Efeito ao passar o mouse: a imagem fica um pouco transparente */
+        .social-links a:hover img {
+            opacity: 0.3;
+        }
+        
+        /* REMOVER SELEÇÃO AZUL */
+        a, img {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
         /* ============================================= */
         /* RODAPÉ E RESPONSIVIDADE */
         /* ============================================= */
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 10px;
             padding: 20px;
             color: #707070;
         }
@@ -236,6 +264,12 @@
         <section id="producoes-academicas"></section>
         <section id="artigos-estudo"></section>
     </main>
+    
+    <div class="social-links container">
+        <a href="https://www.instagram.com/SEU_USUARIO_AQUI" target="_blank" aria-label="Nosso Instagram">
+        <img src="imagens/icon-instagram.png" alt="Ícone do Instagram">
+    </a>
+    </div>
     
     <footer>
         <p>
