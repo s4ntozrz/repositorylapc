@@ -93,6 +93,7 @@
             text-decoration: none;
             overflow-wrap: break-word;
             margin-bottom: 8px; /* Espaço entre título e descrição */
+            text-align: justify;
         }
 
         .post-title:hover, .post-title:active {
@@ -204,7 +205,6 @@
             margin-top: 40px;
             padding: 20px;
             color: #707070;
-            font-size: 0.9em;
         }
         
         @media (max-width: 600px) {
@@ -276,9 +276,10 @@
             }
         ];
 
-        /**
-         * Função final que desenha os posts na tela, com todas as funcionalidades.
-         */
+        // ==================================================================
+        //Função final que desenha os posts na tela, com todas as funcionalidades.
+        // ==================================================================
+        
         function renderizarPosts(lista, elementoId, tituloSecao) {
             const container = document.getElementById(elementoId);
             
