@@ -56,17 +56,20 @@
         /* Estilo para o nome da liga destacado */
         .league-name {
             font-weight: bold;   /* Deixa o texto em negrito */
-            color: #0056b3;     /* Usa a mesma cor azul do cabeçalho para criar consistência */
+            color: #00964d;     /* Usa a mesma cor azul do cabeçalho para criar consistência */
         }
-
+        
+        
         /* Estilo para os títulos das seções */
         h2 {
-            border-bottom: 2px solid #313131;
+            border-bottom: 1px solid #313131;
             padding-bottom: 5px;
             color: #313131;
             text-align: center;
             font-size: 1.3em;
             font-family: "Noto Sans", sans-serif;
+            margin-top: 60px; /* Aumentamos o valor para criar mais espaço acima do título */
+            margin-bottom: 20px;
 
         }
 
@@ -87,6 +90,7 @@
         /* Estilo do título do artigo (link para download) */
         .post-title {
             text-align: justify;
+            display: block;
             font-size: 1em;
             font-weight: bold;
             color: #0056b3;
@@ -95,8 +99,9 @@
             overflow-wrap: break-word;
         }
 
-        .post-title:hover {
-            text-decoration: underline;
+        .post-title:hover, .post-title:active {
+            color: #00964d; /* Muda a cor para vermelho ao passar o mouse ou ao clicar */
+            text-decoration: none; /* Garante que não haja sublinhado */
         }
         
         /* Estilo para a descrição do post */
@@ -108,6 +113,52 @@
             margin-bottom: 10px; /* Espaço abaixo da descrição */
             font-family: "Noto Sans", sans-serif;
         }
+        
+         /* Estilos para a funcionalidade "Ler Mais" */
+        
+        /* Classe para o contêiner da descrição quando ela for longa */
+        .description-wrapper {
+            position: relative; /* Necessário para o gradiente de sobreposição */
+            overflow: hidden;   /* Esconde o texto que transborda */
+        }
+        
+        /* Classe para o texto da descrição quando estiver encolhido */
+        .post-description.collapsed {
+            max-height: 6em; /* Limita a altura a aproximadamente 3 linhas (1.5em por linha) */
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 0;
+        }
+        
+        /* Efeito de gradiente para suavizar o corte do texto */
+        .post-description.collapsed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.5em;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        }
+        
+        /* Estilo para o botão "Ler mais / Ler menos" */
+        .read-more-btn {
+            display: inline-block;
+            background: none;
+            border: none;
+            color: #0056b3;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 0;
+            font-size: 0.9em;
+            font-family: "Noto Sans", sans-serif;
+        }
+        
+        .read-more-btn:hover, .read-more-btn:active {
+            color: #00964D; /* Muda a cor para vermelho ao passar o mouse ou ao clicar */
+            text-decoration: none; /* Garante que não haja sublinhado */
+        }
+                
 
         /* Estilo para as informações do autor e ano */
         .post-meta {
@@ -144,39 +195,39 @@
         }
     </style>
     </head>
-<body>
-
-    <header>
-    <a href="index.html">
-        <img src="imagens/logo-cabecalho.png" alt="Logo LAPC REPOSITÓRIO">
-    </a>
-    </header>
+    <body>
     
-    <section class="introduction container">
-    <p>
-        Bem-vindo(a) ao repositório oficial da 
-        <span class="league-name">2Liga Acadêmica de PsiConecta - LAPC</span>. 
-        Este espaço é dedicado ao armazenamento e compartilhamento de todas as produções acadêmicas, 
-        artigos de estudo e materiais relevantes desenvolvidos pelos nossos membros. Sinta-se à vontade 
-        para explorar, baixar e utilizar nosso acervo para seus estudos e pesquisas.
-    </p>
-    </section>
-    
-  <main class="container">
-    <section id="producoes-academicas">
-        <h2>PRODUÇÕES DA LAPC</h2>
-    </section>
-    <section id="artigos-estudo">
-        <h2>MATERIAIS PARA ESTUDOS</h2>
-    </section>
-</main>
-    
-    <footer>
+        <header>
+        <a href="index.html">
+            <img src="imagens/logo-cabecalho.png" alt="Logo LAPC REPOSITÓRIO">
+        </a>
+        </header>
+        
+        <section class="introduction container">
         <p>
-            <strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong><br>
-            TODOS OS DIREITOS RESERVADOS - 2025
+            Bem-vindo(a) ao repositório oficial da 
+            <span class="league-name">Liga Acadêmica de PsiConecta - LAPC</span>. 
+            Este espaço é dedicado ao armazenamento e compartilhamento de todas as produções acadêmicas, 
+            artigos de estudo e materiais relevantes desenvolvidos pelos nossos membros. Sinta-se à vontade 
+            para explorar, baixar e utilizar nosso acervo para seus estudos e pesquisas.
         </p>
-    </footer>
+        </section>
+        
+      <main class="container">
+        <section id="producoes-academicas">
+            <h2>PRODUÇÕES DA LAPC</h2>
+        </section>
+        <section id="artigos-estudo">
+            <h2>MATERIAIS PARA ESTUDOS</h2>
+        </section>
+    </main>
+        
+        <footer>
+            <p>
+                <strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong><br>
+                TODOS OS DIREITOS RESERVADOS&copy; - 2025
+            </p>
+        </footer>
 
     <script>
         // ==================================================================
@@ -186,10 +237,10 @@
         // ==================================================================
         const producoesDaLiga = [
             {
-                titulo: 'Sem Atividade',
-                descricao: 'Sem Atividade Acadêmica',
-                autor: 'Sem Autores',
-                ano: 'non',
+                titulo: 'Em desenvolvimento...',
+                descricao: 'Nossa primeira pesquisa está tomando forma! Em breve, compartilharemos com vocês os caminhos, as ideias e os objetivos que estão guiando esse projeto.',
+                autor: 'Diretoria de Pesquisa LAPC',
+                ano: '2025',
                 arquivo: 'arquivo/-.pdf' // Caminho para o seu arquivo PDF
             },
             
@@ -222,46 +273,75 @@
         ];
 
         /**
-         * Função que "desenha" os posts na tela.
-         * Ela recebe uma lista de publicações e o ID do local na página onde deve criar os posts.
+         * Função que "desenha" os posts na tela, agora com funcionalidade "Ler Mais".
          */
         function renderizarPosts(lista, elementoId) {
             const container = document.getElementById(elementoId);
-
-            // Se não houver itens na lista, exibe uma mensagem
+            const LIMITE_LINHAS = 4; // Defina o número de linhas antes de mostrar "Ler mais"
+        
             if (lista.length === 0) {
                 container.innerHTML = '<p>Nenhuma publicação nesta seção ainda.</p>';
                 return;
             }
-
-            // Para cada item na lista, cria o código HTML correspondente
-            lista.forEach(item => {
-                // Cria um elemento <div> para o post
+        
+            lista.forEach((item, index) => {
                 const postDiv = document.createElement('div');
                 postDiv.className = 'post';
-                
-                // --- INÍCIO DA ALTERAÇÃO ---
-                // Variável para guardar o HTML da descrição, se ela existir.
+        
+                // Cria IDs únicos para cada descrição e botão, usando o índice do item
+                const descId = `desc-${elementoId}-${index}`;
+                const btnId = `btn-${elementoId}-${index}`;
+        
                 let descricaoHtml = '';
                 if (item.descricao) {
-                descricaoHtml = `<p class="post-description">${item.descricao}</p>`;
-                 }
-
-                // Cria o conteúdo HTML do post
+                    // O texto da descrição é colocado dentro de um contêiner
+                    descricaoHtml = `
+                        <div class="description-wrapper">
+                            <p class="post-description" id="${descId}">${item.descricao}</p>
+                        </div>
+                        <button id="${btnId}" class="read-more-btn" style="display: none;">Ler mais</button>
+                    `;
+                }
+        
                 postDiv.innerHTML = `
                     <a href="${item.arquivo}" class="post-title" download>${item.titulo}</a>
                     ${descricaoHtml}
                     <p class="post-meta">
-                        Autor (a): ${item.autor}<br>
-                        Publicação: ${item.ano}
+                       <strong>Autor (a):</strong> ${item.autor}<br>
+                       <strong>Publicação:</strong> ${item.ano}
                     </p>
-`;
+                `;
                 
-                // Adiciona o post criado ao container na página
                 container.appendChild(postDiv);
-            });
-        }
         
+                // --- LÓGICA PÓS-RENDERIZAÇÃO ---
+                // Agora que o elemento está na página, podemos medir sua altura
+                if (item.descricao) {
+                    const descricaoElemento = document.getElementById(descId);
+                    const botaoElemento = document.getElementById(btnId);
+        
+                    // Calcula a altura real do texto. A altura de uma linha é ~21px.
+                    // Se a altura total for maior que a altura de X linhas, mostramos o botão.
+                    if (descricaoElemento.scrollHeight > (21 * LIMITE_LINHAS)) {
+                        botaoElemento.style.display = 'block'; // Mostra o botão
+                        descricaoElemento.classList.add('collapsed'); // Encolhe o texto
+        
+                        // Adiciona a função de clique ao botão
+                        botaoElemento.addEventListener('click', () => {
+                            const isCollapsed = descricaoElemento.classList.contains('collapsed');
+                            
+                            if (isCollapsed) {
+                                descricaoElemento.classList.remove('collapsed');
+                                botaoElemento.textContent = 'Ler menos';
+                            } else {
+                                descricaoElemento.classList.add('collapsed');
+                                botaoElemento.textContent = 'Ler mais';
+                            }
+                        });
+                    }
+                }
+            });
+        }        
         // "Chama" a função para renderizar as duas listas quando a página carregar
         document.addEventListener('DOMContentLoaded', () => {
             renderizarPosts(producoesDaLiga, 'producoes-academicas');
