@@ -7,77 +7,71 @@
     
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-   
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <style>
-        /* Estilos gerais para o corpo da página */
+        /* ============================================= */
+        /* ESTILOS GERAIS */
+        /* ============================================= */
         body {
             margin: 0;
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
             line-height: 1.6;
+            font-family: "Noto Sans", sans-serif;
         }
 
-        /* Container principal para centralizar o conteúdo */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 15px;
         }
-        
+
+        /* ============================================= */
+        /* CABEÇALHO E INTRODUÇÃO */
+        /* ============================================= */
         header {
-        margin-top: 20px; /* Ajuste este valor como preferir */
+            margin-top: 20px;
+            margin-bottom: 15px;
         }
-
-        /* Estilo do cabeçalho */
+        
         header img {
-        max-width: 350px; /* Define a largura máxima da logo. Ajuste este valor como preferir! */
-        height: auto;     /* Mantém a proporção da imagem para não distorcer */
-        display: block;
-        margin: 0 auto;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 3.2em;
-            font-family: "Bebas Neue", sans-serif;
+            max-width: 350px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
         
-        /* Estilo para a seção de introdução */
         .introduction p {
-            text-align: justify; /* Alinha o texto para justificado */
-            font-size: 1em;      /* Define o tamanho da fonte (pode ajustar se quiser) */
-            color: #444;         /* Uma cor de texto escura, mas não totalmente preta */
-            margin-bottom: 1px; /* Adiciona um espaço abaixo do texto, antes da primeira seção */
-            font-family: "Noto Sans", sans-serif;
+            text-align: justify;
+            font-size: 1em;
+            color: #444;
+            margin-top: 0;
+            margin-bottom: 1px;
         }
 
-        /* Estilo para o nome da liga destacado */
         .league-name {
-            font-weight: bold;   /* Deixa o texto em negrito */
-            color: #00964d;     /* Usa a mesma cor azul do cabeçalho para criar consistência */
+            font-weight: bold;
+            color: #00964d;
         }
         
-        
-        /* Estilo para os títulos das seções */
+        /* ============================================= */
+        /* SEÇÕES E POSTS */
+        /* ============================================= */
         h2 {
-            border-bottom: 1px solid #313131;
-            padding-bottom: 5px;
             color: #313131;
             text-align: center;
             font-size: 1.3em;
-            font-family: "Noto Sans", sans-serif;
-            margin-top: 60px; /* Aumentamos o valor para criar mais espaço acima do título */
             margin-bottom: 20px;
-
+            margin-top: 0; /* A margem superior será controlada pela seção */
+        }
+        
+        /* Adiciona espaço NO TOPO de toda seção, EXCETO a primeira */
+        section + section {
+            margin-top: 60px;
         }
 
-        /* Estilo para cada "post" ou registro */
         .post {
             background-color: #ffffff;
             padding: 15px;
@@ -88,64 +82,77 @@
         }
         
         .post:hover {
-            transform: translateY(-3px); /* Efeito de elevação ao passar o mouse */
+            transform: translateY(-3px);
         }
 
-        /* Estilo do título do artigo (link para download) */
         .post-title {
-            text-align: justify;
             display: block;
             font-size: 1em;
             font-weight: bold;
             color: #0056b3;
             text-decoration: none;
-            font-family: "Noto Sans", sans-serif;
             overflow-wrap: break-word;
+            margin-bottom: 8px; /* Espaço entre título e descrição */
         }
 
         .post-title:hover, .post-title:active {
-            color: #00964d; /* Muda a cor para vermelho ao passar o mouse ou ao clicar */
-            text-decoration: none; /* Garante que não haja sublinhado */
+            color: #00964d;
+            text-decoration: none;
+        }
+
+        .post-title::before {
+            content: '📑';
+            margin-right: 8px;
         }
         
-        /* Estilo para a descrição do post */
         .post-description {
-            text-align: justify; /* Alinha o texto para justificado */
-            font-size: 0.9em;    /* Tamanho de fonte um pouco menor */
-            color: #313131;         /* Cor de texto um pouco mais suave */
-            margin-top: 10px;    /* Espaço acima da descrição */
-            margin-bottom: 10px; /* Espaço abaixo da descrição */
-            font-family: "Noto Sans", sans-serif;
+            text-align: justify;
+            font-size: 0.9em;
+            color: #313131;
+            margin: 0;
+            padding: 0;
         }
         
-         /* Estilos para a funcionalidade "Ler Mais" */
-        
-        /* Classe para o contêiner da descrição quando ela for longa */
-        .description-wrapper {
-            position: relative; /* Necessário para o gradiente de sobreposição */
-            overflow: hidden;   /* Esconde o texto que transborda */
-        }
-        
-        /* Classe para o texto da descrição quando estiver encolhido */
-        .post-description.collapsed {
-            max-height: 6em; /* Limita a altura a aproximadamente 3 linhas (1.5em por linha) */
-            overflow: hidden;
-            position: relative;
+        .post-meta {
+            font-size: 0.9em;
+            color: #828282;
+            margin-top: 10px;
             margin-bottom: 0;
         }
         
-        /* Efeito de gradiente para suavizar o corte do texto */
+        /* ============================================= */
+        /* FUNCIONALIDADES "LER MAIS" E "VER EQUIPE" */
+        /* ============================================= */
+        .description-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .post-description.collapsed {
+            max-height: 6em; /* Aprox. 4 linhas */
+            overflow: hidden;
+            position: relative;
+        }
+        
         .post-description.collapsed::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            bottom: 0; left: 0; right: 0;
             height: 1.5em;
             background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
         }
         
-        /* Estilo para o botão "Ler mais / Ler menos" */
+        .autores-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .autores-list.collapsed {
+            max-height: 1.5em; /* Mostra apenas o primeiro autor */
+            overflow: hidden;
+        }
+        
         .read-more-btn {
             display: inline-block;
             background: none;
@@ -155,60 +162,67 @@
             cursor: pointer;
             padding: 5px 0;
             font-size: 0.9em;
-            font-family: "Noto Sans", sans-serif;
         }
         
         .read-more-btn:hover, .read-more-btn:active {
-            color: #00964D; /* Muda a cor para vermelho ao passar o mouse ou ao clicar */
-            text-decoration: none; /* Garante que não haja sublinhado */
+            color: #00964D;
+            text-decoration: none;
         }
-                
-
-        /* Estilo para as informações do autor e ano */
-        .post-meta {
-            font-size: 0.9em;
-            color: #828282;
-            margin-top: 5px;
-            font-family: "Noto Sans", sans-serif;
-            text-align: justify;
+        
+        /* ============================================= */
+        /* FUNCIONALIDADE "VER MAIS PUBLICAÇÕES" */
+        /* ============================================= */
+        .post.hidden {
+            display: none;
         }
 
-        /* Ícone de documento antes do título */
-        .post-title::before {
-            content: '📑'; /* Emoji de documento */
-            margin-right: 8px;
+        .load-more-btn {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 10px auto 0;
+            padding: 10px 15px;
+            border: 1px solid #0056b3;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #0056b3;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        /* Rodapé simples */
+        .load-more-btn:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        
+        /* ============================================= */
+        /* RODAPÉ E RESPONSIVIDADE */
+        /* ============================================= */
         footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px;
             color: #707070;
-            font-family: "Noto Sans", sans-serif;
             font-size: 0.9em;
         }
         
-        /* Media Query para Responsividade em telas menores (celulares) */
         @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.5em;
-            }
             .post-title {
                 font-size: 1.1em;
             }
         }
     </style>
-    </head>
-    <body>
-    
-        <header>
+</head>
+<body>
+
+    <header>
         <a href="index.html">
             <img src="imagens/logo-cabecalho.png" alt="Logo LAPC REPOSITÓRIO">
         </a>
-        </header>
-        
-        <section class="introduction container">
+    </header>
+    
+    <section class="introduction container">
         <p>
             Bem-vindo(a) ao repositório oficial da 
             <span class="league-name">Liga Acadêmica de PsiConecta - LAPC</span>. 
@@ -216,50 +230,32 @@
             artigos de estudo e materiais relevantes desenvolvidos pelos nossos membros. Sinta-se à vontade 
             para explorar, baixar e utilizar nosso acervo para seus estudos e pesquisas.
         </p>
-        </section>
-        
-      <main class="container">
-        <section id="producoes-academicas">
-            <h2>PRODUÇÕES DA LAPC</h2>
-        </section>
-        <section id="artigos-estudo">
-            <h2>MATERIAIS PARA ESTUDOS</h2>
-        </section>
+    </section>
+    
+    <main class="container">
+        <section id="producoes-academicas"></section>
+        <section id="artigos-estudo"></section>
     </main>
-        
-        <footer>
-            <p>
-                <strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong><br>
-                TODOS OS DIREITOS RESERVADOS&copy; - 2025
-            </p>
-        </footer>
+    
+    <footer>
+        <p>
+            <strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong><br>
+            TODOS OS DIREITOS RESERVADOS&copy; - 2025
+        </p>
+    </footer>
 
     <script>
         // ==================================================================
         // LISTA 1: Produções Acadêmicas da Liga
-        // Para adicionar um novo arquivo, apenas copie e cole um bloco {}
-        // e altere os valores. Não se esqueça da vírgula entre os blocos!
         // ==================================================================
         const producoesDaLiga = [
             {
                 titulo: 'Em desenvolvimento...',
                 descricao: 'Nossa primeira pesquisa está tomando forma! Em breve, compartilharemos com vocês os caminhos, as ideias e os objetivos que estão guiando esse projeto.',
-                autor: 'Diretoria de Pesquisa LAPC',
+                autores: ['Diretoria de Pesquisa LAPC'], // Use lista mesmo para um autor
                 ano: '2025',
-                arquivo: 'arquivo/-.pdf' // Caminho para o seu arquivo PDF
+                arquivo: 'arquivos/-.pdf'
             },
-            
-            
-                
-        
-            // ADICIONE NOVOS ITENS AQUI
-            // Exemplo:
-            // {
-            //     titulo: 'Título do Novo Trabalho',
-            //     autor: 'Seu Nome',
-            //     ano: '2025',
-            //     arquivo: 'arquivo/nome-do-seu-arquivo.pdf'
-            // },
         ];
 
         // ==================================================================
@@ -269,90 +265,133 @@
             {
                 titulo: 'SAÚDE MENTAL NA UNIVERSIDADE: AÇÕES E INTERVENÇÕES VOLTADAS PARA OS ESTUDANTES',
                 descricao: 'O artigo apresenta uma análise documental das intervenções em saúde mental na Universidade Federal de Alagoas (Ufal) direcionadas ao corpo estudantil entre 2010 e 2020. A pesquisa, que utilizou Relatórios de Gestão Institucional e notícias disponíveis no site e redes sociais da universidade, identificou que as intervenções em saúde mental na Ufal são recentes e escassas, com um início mais sistemático a partir de 2016. O impulso para essas ações veio das políticas de democratização, notadamente o Programa Nacional de Assistência Estudantil (PNAES). A maior parte das ações é desenvolvida pelo setor de assistência estudantil (Proest), com foco na perspectiva de prevenção. Dentre as atividades, prevalecem o acolhimento psicológico, os encaminhamentos para a Rede de Atenção Psicossocial (RAPS), e a realização de campanhas nacionais e internacionais, como o "Setembro Amarelo". Em 2020, o contexto da pandemia de Covid-19 levou à paralisação e subsequente adaptação dos serviços, com o acolhimento psicológico sendo realizado em formato virtual e a criação de cartilhas e rodas de conversa para auxiliar os estudantes. No entanto, o estudo destaca que persistem desafios significativos em relação à interdisciplinaridade e à intersetorialidade, pois as ações se apresentaram fragmentadas e com pouca articulação institucional entre os diversos setores da Ufal. A análise conclui que a saúde mental na universidade exige um planejamento institucional que supere a fragmentação de esforços e envolva diferentes áreas e políticas sociais.',
-                autor: 'LUCÉLIA MARIA - HELIANE DE ALMEIDA - KYSSIA MARCELLE - SUSANE VASCONCELOS',
+                autores: [
+                    'LUCÉLIA MARIA',
+                    'HELIANE DE ALMEIDA',
+                    'KYSSIA MARCELLE',
+                    'SUSANE VASCONCELOS'
+                ],
                 ano: '2023',
-                arquivo: 'arquivo/SAÚDE MENTAL NA UNIVERSIDADE - 2023 UFAL.pdf' // Caminho para o seu arquivo PDF
-            },
-            
-             // ADICIONE NOVOS ITENS AQUI
+                arquivo: 'arquivos/SAÚDE MENTAL NA UNIVERSIDADE - 2023 UFAL.pdf'
+            }
         ];
 
         /**
-         * Função que "desenha" os posts na tela, agora com funcionalidade "Ler Mais".
+         * Função final que desenha os posts na tela, com todas as funcionalidades.
          */
-        function renderizarPosts(lista, elementoId) {
+        function renderizarPosts(lista, elementoId, tituloSecao) {
             const container = document.getElementById(elementoId);
-            const LIMITE_LINHAS = 4; // Defina o número de linhas antes de mostrar "Ler mais"
-        
+            
+            const LIMITE_INICIAL = 3;
+            const INCREMENTO_POSTS = 3;
+            const LIMITE_LINHAS_DESC = 4;
+
+            container.innerHTML = ''; // Limpa a seção para evitar duplicatas
+
+            // Cria e adiciona o título da seção
+            const tituloH2 = document.createElement('h2');
+            tituloH2.textContent = tituloSecao;
+            container.appendChild(tituloH2);
+
             if (lista.length === 0) {
-                container.innerHTML = '<p>Nenhuma publicação nesta seção ainda.</p>';
+                const noPostsMessage = document.createElement('p');
+                noPostsMessage.textContent = 'Nenhuma publicação nesta seção ainda.';
+                container.appendChild(noPostsMessage);
                 return;
             }
-        
+
             lista.forEach((item, index) => {
                 const postDiv = document.createElement('div');
                 postDiv.className = 'post';
-        
-                // Cria IDs únicos para cada descrição e botão, usando o índice do item
+
+                if (index >= LIMITE_INICIAL) {
+                    postDiv.classList.add('hidden');
+                }
+
                 const descId = `desc-${elementoId}-${index}`;
-                const btnId = `btn-${elementoId}-${index}`;
-        
+                const descBtnId = `desc-btn-${elementoId}-${index}`;
                 let descricaoHtml = '';
                 if (item.descricao) {
-                    // O texto da descrição é colocado dentro de um contêiner
                     descricaoHtml = `
                         <div class="description-wrapper">
-                            <p class="post-description" id="${descId}">${item.descricao}</p>
+                            <div class="post-description" id="${descId}">${item.descricao}</div>
                         </div>
-                        <button id="${btnId}" class="read-more-btn" style="display: none;">Ler mais</button>
+                        <button id="${descBtnId}" class="read-more-btn" style="display: none;">Ler mais</button>
                     `;
                 }
-        
+
+                const autoresListId = `autores-${elementoId}-${index}`;
+                const autoresBtnId = `autores-btn-${elementoId}-${index}`;
+                let autoresHtml = '';
+                if (Array.isArray(item.autores) && item.autores.length > 1) {
+                    const autoresItems = item.autores.map(autor => `<li><strong>Autor (a):</strong> ${autor}</li>`).join('');
+                    autoresHtml = `
+                        <ul class="autores-list collapsed" id="${autoresListId}">${autoresItems}</ul>
+                        <button id="${autoresBtnId}" class="read-more-btn">Ver equipe</button>
+                    `;
+                } else {
+                    const autorUnico = (item.autores && item.autores[0]) || 'Não informado';
+                    autoresHtml = `<p class="post-meta"><strong>Autor (a):</strong> ${autorUnico}</p>`;
+                }
+                
                 postDiv.innerHTML = `
                     <a href="${item.arquivo}" class="post-title" download>${item.titulo}</a>
                     ${descricaoHtml}
-                    <p class="post-meta">
-                       <strong>Autor (a):</strong> ${item.autor}<br>
-                       <strong>Publicação:</strong> ${item.ano}
-                    </p>
+                    ${autoresHtml}
+                    <p class="post-meta"><strong>Publicação:</strong> ${item.ano}</p>
                 `;
                 
                 container.appendChild(postDiv);
-        
-                // --- LÓGICA PÓS-RENDERIZAÇÃO ---
-                // Agora que o elemento está na página, podemos medir sua altura
+
                 if (item.descricao) {
-                    const descricaoElemento = document.getElementById(descId);
-                    const botaoElemento = document.getElementById(btnId);
-        
-                    // Calcula a altura real do texto. A altura de uma linha é ~21px.
-                    // Se a altura total for maior que a altura de X linhas, mostramos o botão.
-                    if (descricaoElemento.scrollHeight > (21 * LIMITE_LINHAS)) {
-                        botaoElemento.style.display = 'block'; // Mostra o botão
-                        descricaoElemento.classList.add('collapsed'); // Encolhe o texto
-        
-                        // Adiciona a função de clique ao botão
-                        botaoElemento.addEventListener('click', () => {
-                            const isCollapsed = descricaoElemento.classList.contains('collapsed');
-                            
-                            if (isCollapsed) {
-                                descricaoElemento.classList.remove('collapsed');
-                                botaoElemento.textContent = 'Ler menos';
-                            } else {
-                                descricaoElemento.classList.add('collapsed');
-                                botaoElemento.textContent = 'Ler mais';
-                            }
+                    const descElemento = document.getElementById(descId);
+                    const descBotao = document.getElementById(descBtnId);
+                    if (descElemento.scrollHeight > (21 * LIMITE_LINHAS_DESC)) {
+                        descBotao.style.display = 'block';
+                        descElemento.classList.add('collapsed');
+                        descBotao.addEventListener('click', () => {
+                            descElemento.classList.toggle('collapsed');
+                            descBotao.textContent = descElemento.classList.contains('collapsed') ? 'Ler mais' : 'Ler menos';
                         });
                     }
                 }
+
+                if (Array.isArray(item.autores) && item.autores.length > 1) {
+                    const autoresElemento = document.getElementById(autoresListId);
+                    const autoresBotao = document.getElementById(autoresBtnId);
+                    autoresBotao.addEventListener('click', () => {
+                        autoresElemento.classList.toggle('collapsed');
+                        autoresBotao.textContent = autoresElemento.classList.contains('collapsed') ? 'Ver equipe' : 'Ocultar equipe';
+                    });
+                }
             });
-        }        
+
+            if (lista.length > LIMITE_INICIAL) {
+                const botaoVerMais = document.createElement('button');
+                botaoVerMais.textContent = 'Ver mais publicações';
+                botaoVerMais.className = 'load-more-btn';
+
+                botaoVerMais.addEventListener('click', () => {
+                    const postsEscondidos = container.querySelectorAll('.post.hidden');
+                    for (let i = 0; i < INCREMENTO_POSTS; i++) {
+                        if (postsEscondidos[i]) {
+                            postsEscondidos[i].classList.remove('hidden');
+                        }
+                    }
+                    if (container.querySelectorAll('.post.hidden').length === 0) {
+                        botaoVerMais.style.display = 'none';
+                    }
+                });
+                container.appendChild(botaoVerMais);
+            }
+        }
+        
         // "Chama" a função para renderizar as duas listas quando a página carregar
         document.addEventListener('DOMContentLoaded', () => {
-            renderizarPosts(producoesDaLiga, 'producoes-academicas');
-            renderizarPosts(artigosParaEstudo, 'artigos-estudo');
+            renderizarPosts(producoesDaLiga, 'producoes-academicas', 'PRODUÇÕES DA LAPC');
+            renderizarPosts(artigosParaEstudo, 'artigos-estudo', 'MATERIAIS PARA ESTUDOS');
         });
 
     </script>
-    </body>
+</body>
 </html>
