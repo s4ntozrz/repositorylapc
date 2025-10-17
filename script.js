@@ -10,6 +10,13 @@ const producoesDaLiga = [
         ano: '2025',
         arquivo: 'arquivos/-.pdf'
     },
+    
+    
+    
+    
+    
+// MANTER FORMATAÇÃO COMO NAS PRIMEIRAS PUBLICAÇÕES
+
 ];
 
 // ==================================================================
@@ -35,6 +42,7 @@ const artigosParaEstudo = [
 
 
 
+//MANTER FORMATAÇÃO COMO NAS PRIMEIRAS PUBLICAÇÕES
 
 ,
 ];
