@@ -145,21 +145,28 @@
             max-height: 500px; /* Altura grande o suficiente para mostrar todos os links */
         }
         
-        /* Estilo para os links finais (Ex: Sobre, Repositório) */
-        .submenu a {
+        /* Estilo para TODOS os links dentro do menu lateral */
+        .main-nav ul a { /* Mudamos o seletor para ser mais geral */
             display: block;
-            padding: 12px 20px 12px 35px; /* Padding à esquerda para identação */
+            padding: 12px 20px 12px 20px; /* Padding padrão */
             color: #555;
             text-decoration: none;
             border-bottom: 1px solid #f0f0f0;
             transition: background-color 0.2s, color 0.2s;
+            font-weight: bold; /* Deixa todos os links em negrito */
         }
         
-        .submenu a:hover {
+        /* Identação APENAS para os links DENTRO de um submenu */
+        .submenu a {
+            padding-left: 35px; /* Adiciona o recuo só para sub-itens */
+            font-weight: normal; /* Deixa sub-itens com peso normal */
+        }
+        
+        .main-nav ul a:hover { /* Hover geral */
             background-color: #00964d;
             color: #ffffff;
         }
-        
+                
         /* Classe para impedir a rolagem da página quando o menu está aberto */
         body.no-scroll {
             overflow: hidden;
@@ -740,3 +747,96 @@ footer p {
             font-size: 0.9em;
             font-weight: 300;
         }
+        
+        /* ============================================= */
+        /* ESTILOS DA PÁGINA "SOBRE" (NOVO) */
+        /* ============================================= */
+        .about-section {
+            margin-bottom: 40px; /* Espaço entre as seções da página "Sobre" */
+        }
+        
+        .about-section h3 {
+            font-size: 1.4em;
+            color: #00964d; /* Cor verde da marca */
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .about-section p, .about-section li {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .about-section strong {
+            color: #333;
+        }
+        
+        .about-section ul {
+            padding-left: 20px;
+        }
+        
+/* ============================================= */
+/* ESTILOS DA PÁGINA "CONTATO" (ATUALIZADO) */
+/* ============================================= */
+.contact-info-section {
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.contact-info-section p { /* Parágrafo inicial */
+    font-size: 1em;
+    line-height: 1.7;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 40px; /* Aumenta espaço após o parágrafo inicial */
+}
+
+/* Estilo para cada bloco de setor */
+.contact-sector { 
+    display: flex; 
+    align-items: flex-start; 
+    margin-bottom: 30px; 
+}
+
+.contact-sector i { 
+    font-size: 1.8em;
+    color: #00964d; 
+    margin-right: 20px;
+    margin-top: 5px; 
+    width: 30px; 
+    text-align: center;
+}
+
+.contact-sector div { 
+    flex: 1; 
+}
+
+.contact-sector h3 { 
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.contact-sector p { /* Parágrafo de descrição do setor */
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: left; 
+}
+
+.contact-sector a { /* Link do email */
+    color: #0056b3; 
+    text-decoration: none;
+    font-weight: bold;
+    word-break: break-all; /* Garante que emails longos quebrem a linha */
+}
+
+.contact-sector a:hover { 
+    text-decoration: underline;
+}
