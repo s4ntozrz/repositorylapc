@@ -463,20 +463,51 @@
             line-height: 1.5;
         }
         
-        
+
         /* --- RODAPÉ --- */
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #e9e9e9;
-            color: #707070;
-            font-size: 0.9em;
+footer {
+    text-align: center;
+    padding: 15px 10px; /* Define 15px em cima/baixo e 10px nas laterais */
+    background-color: #e9e9e9;
+    color: #707070;
+    font-size: 0.9em;
+}
+
+/* Remove as margens extras dos parágrafos dentro do rodapé */
+footer p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+        
+        /* NOVO: Estilo para os ícones de contato no rodapé */
+        .footer-social-icons {
+            margin-bottom: 20px; /* Espaço entre os ícones e o texto abaixo */
+        }
+        
+        .footer-social-icons a {
+            color: #333; /* Cor principal dos ícones */
+            font-size: 2.0em; /* Tamanho dos ícones */
+            margin: 0 12px; /* Espaçamento entre os ícones */
+            transition: color 0.2s;
+            text-decoration: none; /* <-- ADICIONE ESTA LINHA MÁGICA */
+        }
+        
+        .footer-social-icons a:hover {
+            color: #00964d; /* Cor verde da marca no hover */
+        }
+        /* FIM DO NOVO BLOCO */
+        
+        /* Remove as margens extras dos parágrafos dentro do rodapé */
+        footer p {
+            margin-top: 5px;
+            margin-bottom: 5px;
         }
         
         /* ======================================================== */
         /* REMOVE O DESTAQUE AZUL DE SELEÇÃO NO CELULAR */
         /* ======================================================== */
-        a, img, button, .menu-btn, .submenu-toggle {
+        a, img, button, .menu-btn, .submenu-toggle, .news-card {
             -webkit-tap-highlight-color: transparent;
             user-select: none;
         }
@@ -623,6 +654,21 @@
         .load-more-btn:hover {
             background-color: #0056b3;
             color: #ffffff;
+        }
+        
+        /* ============================================= */
+        /* DESCRIÇÃO DA PÁGINA DO REPOSITÓRIO (NOVO) */
+        /* ============================================= */
+        .repository-description p {
+            text-align: justify;
+            font-size: 1em;
+            color: #444;
+            margin-bottom: 40px; /* Cria um espaço antes do título "PRODUÇÕES DA LAPC" */
+        }
+        
+        .league-name {
+            font-weight: bold;
+            color: #00964d; /* <-- A cor verde! */
         }
         
         /* ============================================= */
