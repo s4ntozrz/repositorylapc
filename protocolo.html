@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - LAPC</title>
+    <title>Solicitação de Protocolo - LAPC</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=1.1">
+    
+    <link rel="stylesheet" href="style.css?v=1.1"> 
 </head>
 <body>
 
@@ -31,14 +32,13 @@
     <nav class="main-nav" id="main-nav">
         <ul>
             <li><a href="index.html">INÍCIO</a></li> 
-            
             <li>
                 <div class="submenu-toggle">A LAPC</div>
                 <ul class="submenu">
                     <li><a href="sobre.html">SOBRE</a></li>
                     <li><a href="publicacoes.html">REPOSITÓRIO</a></li>
-                    <li><a href="protocolo.html">PROTOCOLO</a></li>
                     <li><a href="contato.html">CONTATOS</a></li>
+                    <li><a href="protocolo.html">PROTOCOLO</a></li>
                 </ul>
             </li>
         </ul>
@@ -47,60 +47,55 @@
     <main class="main-content main-content-padding">
         <div class="container">
             
-            <h2 style="text-align: center; margin-bottom: 40px;">Contatos por Setor</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;">Solicitação de Protocolo</h2>
 
-            <section class="contact-info-section">
-                <p>
-                    Para facilitar a comunicação e garantir que sua mensagem chegue à pessoa certa, 
-                    utilize os e-mails específicos de cada diretoria abaixo.
-                </p>
-
-                <div class="contact-sector">
-                    <i class="fa-solid fa-users"></i> 
-                    <div>
-                        <h3>Diretoria Geral</h3>
-                        <p>Para assuntos gerais, parcerias e representação oficial:</p>
-                        <a href="mailto:diretoria@lapc.com">diretoria@lapc.com</a> 
-                    </div>
-                </div>
-
-                <div class="contact-sector">
-                    <i class="fa-solid fa-file-lines"></i> 
-                    <div>
-                        <h3>Secretaria</h3>
-                        <p>Para documentação, inscrições e informações administrativas:</p>
-                        <a href="mailto:secretaria@lapc.com">secretaria@lapc.com</a> 
-                    </div>
-                </div>
-
-                <div class="contact-sector">
-                    <i class="fa-solid fa-coins"></i> 
-                    <div>
-                        <h3>Diretoria Financeira</h3>
-                        <p>Para questões financeiras, pagamentos e orçamentos:</p>
-                        <a href="mailto:financeiro@lapc.com">financeiro@lapc.com</a> 
-                    </div>
-                </div>
+            <section class="form-section">
+                <p>Utilize o formulário abaixo para registrar sua solicitação. Preencha todos os campos e descreva sua necessidade com clareza. Sua solicitação será encaminhada ao setor responsável.</p>
                 
-                <div class="contact-sector">
-                    <i class="fa-solid fa-flask"></i> 
-                    <div>
-                        <h3>Diretoria de Pesquisa</h3>
-                        <p>Para informações sobre projetos de pesquisa e extensão:</p>
-                        <a href="mailto:pesquisa@lapc.com">pesquisa@lapc.com</a> 
+                <form action="https://formspree.io/f/xkgqewyv" method="POST" class="protocol-form">
+                    
+                    <div class="form-group">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
-                </div>
-
-                <div class="contact-sector">
-                    <i class="fa-solid fa-bullhorn"></i> 
-                    <div>
-                        <h3>Diretoria de Marketing</h3>
-                        <p>Para comunicação, redes sociais e divulgação de eventos:</p>
-                        <a href="mailto:marketing@lapc.com">marketing@lapc.com</a> 
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                </div>
+                    
+                    <div class="form-group">
+                        <label for="telefone">Telefone (com DDD):</label>
+                        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="setor">Setor Destinatário:</label>
+                        <select id="setor" name="setor" required>
+                            <option value="">-- Selecione o Setor --</option>
+                            <option value="Diretoria Geral">Diretoria Geral</option>
+                            <option value="Secretaria">Secretaria</option>
+                            <option value="Financeiro">Diretoria Financeira</option>
+                            <option value="Pesquisa">Diretoria de Pesquisa</option>
+                            <option value="Marketing">Diretoria de Marketing</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="descricao">Descrição da Solicitação:</label>
+                        <textarea id="descricao" name="descricao" rows="6" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Enviar Solicitação</button>
+                    </div>
+                </form>
+                </section>
 
-            </section> </div> </main> <footer>
+        </div>
+    </main>
+
+    <footer>
         <div class="footer-social-icons">
             <a href="https://www.instagram.com/liga.psiconecta/" target="_blank" aria-label="Instagram">
                 <i class="fa-brands fa-instagram"></i>
