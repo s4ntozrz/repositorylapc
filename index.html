@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPC - Liga Acadêmica de PsiConecta</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </button>
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="imagens/cabecalhoinicial.png" alt="Logo LAPC">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav" id="main-nav">
+        <ul>
+            <li>
+                <div class="submenu-toggle">A LAPC</div>
+                <ul class="submenu">
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="publicacoes.html">REPOSITÓRIO</a></li>
+                    <li><a href="contato.html">CONTATOS</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="submenu-toggle">PESSOAS</div>
+                <ul class="submenu">
+                    <li><a href="diretoria.html">DIRETORIA</a></li>
+                    <li><a href="coord-pesquisa.html">COORDENAÇÃO DE PESQUISA</a></li>
+                    <li><a href="coord-curso.html">COORDENAÇÃO DE CURSO</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="submenu-toggle">COMUNICAÇÃO</div>
+                <ul class="submenu">
+                    <li><a href="noticias.html">NOTÍCIAS</a></li>
+                    <li><a href="assessoria.html">ASSESSORIA DE COMUNICAÇÃO</a></li>
+                    <li><a href="redes-sociais.html">REDES SOCIAIS</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+    <section class="hero-section"></section>
+
+
+    <main class="main-content">
+        <div class="container">
+            
+            <section class="intro-section">
+                <h2>NOSSO PROPÓSITO</h2>
+                <p>A PsiConecta nasceu do desejo de unir o saber acadêmico à vida real. Somos estudantes que acreditam que a Psicologia não deve ficar nas salas de aula, ela precisa caminhar nas ruas, escutar as vozes e transformar realidades.</br>
+                   <br>Nosso propósito é criar pontes entre teoria e prática, entre mente e sociedade. Queremos compreender o que move as pessoas e, com isso, mover o mundo junto com elas.</br>
+                   <br>Aqui, cada pesquisa é um ato de empatia, e cada encontro é uma oportunidade de fazer da Psicologia uma força de transformação social.</br>
+                    <br>A Liga Acadêmica PsiConecta - LAPC é uma organização estudantil do <strong>Centro Universitário Universo Recife.</strong></br></p>
+            </section>
+            
+            <section class="intro-logo">
+                <a href="https://universo.edu.br" target="_blank">
+                    <img src="imagens/logofaculdadedes.png" alt="Universo Recife" class="university-logo">
+                </a>
+            </section>
+            
+            <section class="news-section">
+                <div class="container">
+                    <h2>Últimas Notícias</h2>
+            
+                    <div class="news-wrapper" id="news-wrapper">
+            
+                        <div id="news-container"></div>
+            
+                        <div class="news-load-more-overlay" id="news-overlay">
+                            <button class="load-more-btn" id="news-load-more-btn">Ver Mais Notícias</button>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>
+
+            <section class="team-section">
+                <h2>DIRETORIA 2025.2</h2>
+                <p style="text-align: center; margin-top: -30px; margin-bottom: 30px; font-size: 0.9em; color: #555;">Arraste para o lado e conheça a equipe responsável por conduzir as ações, projetos e representações oficiais da liga durante o semestre.</p>
+            
+                <div class="team-carousel">
+            
+                    <div class="member-profile-card">
+                        <img src="imagens/malu.jpg" alt="Foto da Maria Luiza">
+                        <div class="member-info-overlay">
+                            <h3>Maria Luiza</h3>
+                            <h4>Diretora</h4>
+                        </div>
+                    </div>
+            
+                    <div class="member-profile-card">
+                        <img src="imagens/taci.jpg" alt="Foto da Taciana">
+                        <div class="member-info-overlay">
+                            <h3>Taciana Cristina</h3>
+                            <h4>Vice-Diretora</h4>
+                        </div>
+                    </div>
+            
+                    <div class="member-profile-card">
+                        <img src="imagens/gabriel.jpg" alt="Gabriel Correia">
+                        <div class="member-info-overlay">
+                            <h3>Gabriel Correia</h3>
+                            <h4>Secretário</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="member-profile-card">
+                        <img src="imagens/gyowanna.jpg" alt="Foto Gyowanna">
+                        <div class="member-info-overlay">
+                            <h3>Gyowanna Neto</h3>
+                            <h4>Diretora Financeira</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="member-profile-card">
+                        <img src="imagens/rubens.jpg" alt="Foto Rubens">
+                        <div class="member-info-overlay">
+                            <h3>Rúbens Araujo</h3>
+                            <h4>Diretor de Pesquisa</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="member-profile-card">
+                        <img src="imagens/hugo.png" alt="Foto Hugo">
+                        <div class="member-info-overlay">
+                            <h3>Hugo Martins</h3>
+                            <h4>Diretor de Marketing</h4>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                    
+                    
+            </div>
+            </section>
+            </div>
+    </main>
+
+            <div class="modal-overlay" id="news-modal">
+                <div class="modal-content">
+                    <button class="modal-close" id="modal-close-btn">&times;</button>
+                    <h2 id="modal-title"></h2>
+                    <span id="modal-date"></span>
+                    <div id="modal-full-content"></div>
+                </div>
+            </div>
+
+    <footer>
+        <p class="footer-address">
+            <br><strong>Centro Universitário Universo Recife</strong></br>
+            Av. Mal. Mascarenhas de Morais, 2169 - Imbiribeira, Recife - PE - CEP: 51170-000
+        </p>
+        <p>
+            </br><strong>LIGA ACADÊMICA PSICONECTA - LAPC</strong></br>
+            <strong>2025</strong>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
