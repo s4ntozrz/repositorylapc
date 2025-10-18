@@ -391,13 +391,13 @@
             display: flex; /* ...mostramos o overlay com o botão */
         }
 
-            /* ============================================= */
-            /* ESPAÇAMENTO ENTRE SEÇÕES (NOVO) */
-            /* ============================================= */
-            /* Adiciona espaço NO TOPO de toda seção, EXCETO a primeira */
-            section + section {
-                margin-top: 45px; /* Ajuste este valor como preferir */
-            }
+        /* ============================================= */
+        /* ESPAÇAMENTO ENTRE SEÇÕES (NOVO) */
+        /* ============================================= */
+        /* Adiciona espaço NO TOPO de toda seção, EXCETO a primeira */
+        section + section {
+            margin-top: 45px; /* Ajuste este valor como preferir */
+        }
         
         
         .intro-section {
@@ -472,19 +472,19 @@
         
 
         /* --- RODAPÉ --- */
-footer {
-    text-align: center;
-    padding: 15px 10px; /* Define 15px em cima/baixo e 10px nas laterais */
-    background-color: #e9e9e9;
-    color: #707070;
-    font-size: 0.9em;
-}
+        footer {
+            text-align: center;
+            padding: 15px 10px; /* Define 15px em cima/baixo e 10px nas laterais */
+            background-color: #e9e9e9;
+            color: #707070;
+            font-size: 0.9em;
+        }
 
-/* Remove as margens extras dos parágrafos dentro do rodapé */
-footer p {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
+        /* Remove as margens extras dos parágrafos dentro do rodapé */
+        footer p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
 
         
         /* NOVO: Estilo para os ícones de contato no rodapé */
@@ -841,9 +841,9 @@ footer p {
             text-decoration: underline;
         }
         
-    /* ============================================= */
-    /* ESTILOS DA PÁGINA E FORMULÁRIO DE PROTOCOLO (NOVO) */
-    /* ============================================= */
+        /* ============================================= */
+        /* ESTILOS DA PÁGINA E FORMULÁRIO DE PROTOCOLO (NOVO) */
+        /* ============================================= */
         .form-section {
             background-color: #ffffff; 
             padding: 30px;
