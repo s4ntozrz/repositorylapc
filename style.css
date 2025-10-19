@@ -914,3 +914,119 @@
         .protocol-form .submit-btn:hover {
             background-color: #007a3e; /* Verde um pouco mais escuro */
         }
+
+        /* ============================================= */
+        /* ESTILOS DA PÁGINA "PROCESSO SELETIVO" (NOVO) */
+        /* ============================================= */
+        .selection-info-section {
+            background-color: #ffffff; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        
+        .selection-info-section > div { /* Estilo para cada bloco (Status, Edital, etc.) */
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee; /* Linha separadora entre blocos */
+        }
+        .selection-info-section > div:last-child {
+            border-bottom: none; /* Remove a linha do último bloco */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .selection-info-section h3 {
+            font-size: 1.3em;
+            color: #00964d; /* Cor verde da marca */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .selection-info-section p, .selection-info-section li {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .selection-info-section ul {
+            padding-left: 20px;
+            list-style: disc; /* Estilo de lista padrão */
+        }
+        
+        /* Estilos para a caixa de Status */
+        .status-box {
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid; /* Barra lateral colorida */
+            margin-bottom: 30px;
+        }
+        .status-box h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: inherit; /* Herda a cor da barra lateral */
+            border-bottom: none; /* Remove a linha padrão de h3 aqui */
+        }
+        .status-box p {
+            margin-bottom: 0;
+            font-size: 1em;
+        }
+        
+        .status-box.open {
+            border-color: #28a745; /* Verde para "Aberto" */
+            background-color: #e9f7ec;
+            color: #155724;
+            text-align: justify;
+        }
+        .status-box.closed {
+            border-color: #dc3545; /* Vermelho para "Fechado" */
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .status-box.soon {
+            border-color: #ffc107; /* Amarelo para "Em Breve" */
+            background-color: #fff8e1;
+            color: #856404;
+        }
+        
+        /* Estilos para links de documentos */
+        .document-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .document-links li {
+            margin-bottom: 10px;
+        }
+        .document-links a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .document-links a:hover {
+            text-decoration: underline;
+        }
+        .document-links i {
+            margin-right: 8px;
+            color: #007bff; /* Azul para ícones de arquivo */
+        }
+        
+        /* Estilos para o Cronograma */
+        .timeline ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .timeline li {
+            margin-bottom: 10px;
+        }
+        
+        /* Estilos para a seção "Mais Informações" */
+        .more-info a {
+             color: #0056b3;
+             text-decoration: none;
+             font-weight: bold;
+        }
+        .more-info a:hover {
+             text-decoration: underline;
+        }
